@@ -1,6 +1,6 @@
 {
   "name": "accounting",
-  "version": "0.0.1.alpha",
+  "version": "0.0.1",
   "description": "Accounting App",
   "main": "build/server.js",
   "scripts": {
@@ -14,5 +14,9 @@
     "accounting"
   ],
   "author": "Jan Dietrich, Tobias Bitterli",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {}
 }
