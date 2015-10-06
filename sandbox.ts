@@ -5,10 +5,10 @@ var end = new Date().getTime();
 
 console.log(pi, (end - start) / 1000);
 
-function estimatePi(shots) {
+function estimatePi(shots: number) {
     var counter = 0;
-    var x;
-    var y;
+    var x: number;
+    var y: number;
 
     for(let i = 0; i < shots; i++) {
         x = Math.random();
