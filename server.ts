@@ -1,6 +1,7 @@
 /// <reference path="./typings/tsd.d.ts" />
 
 import * as express from "express";
+import {connect} from "mongoose";
 import * as bodyParser from "body-parser";
 import * as path from "path";
 import {mainRoute} from "./app/routes/main";
@@ -15,5 +16,7 @@ app.use(bodyParser.json());
 
 // bind the api to the url /app
 app.use("/app", mainRoute);
+
+connect("mongodb://localhost:27017/accounting");
 
 app.listen(3000);
