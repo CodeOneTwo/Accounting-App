@@ -33,12 +33,18 @@
       "commit": "54f064352a3615443f7bff4198078db15e28247b"
     },
     "assertion-error/assertion-error.d.ts": {
-      "commit": "54f064352a3615443f7bff4198078db15e28247b"
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     },
     "chai/chai.d.ts": {
-      "commit": "54f064352a3615443f7bff4198078db15e28247b"
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     },
     "body-parser/body-parser.d.ts": {
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
+    },
+    "supertest/supertest.d.ts": {
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
+    },
+    "superagent/superagent.d.ts": {
       "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     }
   }

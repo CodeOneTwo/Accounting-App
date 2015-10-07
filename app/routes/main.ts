@@ -6,7 +6,13 @@ import {companyRoute} from "./company";
 var mainRoute = express.Router();
 
 mainRoute.use("/companies", companyRoute);
-mainRoute.get("/", function(req, res) {res.send("hallo accounting app")})
+mainRoute.get("/", getInfo);
 // app.use("/accounts", accountRoute);
 
+function getInfo(req, res) {
+	res.json({
+		"version": "0.0.1",
+		"authors": "Jan Dietrich, Tobias Bitterli, Dario Maggi"
+	});
+}
 export {mainRoute};

@@ -20,3 +20,5 @@ app.use("/app", mainRoute);
 connect("mongodb://localhost:27017/accounting");
 
 app.listen(3000);
+
+export {app};
