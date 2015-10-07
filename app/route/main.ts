@@ -1,7 +1,7 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../../typings/tsd.d.ts" />
 import * as express from "express";
 
-import {companyRoute} from "./companies/route";
+import {companyRoute} from "./company";
 
 var app = express.Router();
 
