@@ -1,10 +1,8 @@
 /// <reference path="../../typings/tsd.d.ts" />
-import {connect} from "mongoose";
 import {should, expect} from "chai";
 import * as request from "supertest";
 
 import {app} from "../../server";
-
 
 describe("routeTests", function(){
 	it("get info", function(done) {
