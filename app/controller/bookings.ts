@@ -3,7 +3,9 @@
 import {Booking} from "../data/Booking";
 
 export function listBookings() {
-    return [];
+    var booking = new Booking;
+    var bookings = [booking];
+    return bookings;
 }
 
 export function getBooking() {

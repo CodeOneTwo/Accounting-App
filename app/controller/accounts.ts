@@ -3,7 +3,10 @@
 import {Account} from "../data/Account";
 
 export function listAccounts() {
-    return [];
+    var account = new Account();
+    var accounts = [account];
+    
+    return accounts;
 }
 
 export function getAccount() {

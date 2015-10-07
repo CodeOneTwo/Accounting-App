@@ -3,7 +3,10 @@
 import {Company} from "../data/Company";
 
 export function listCompanies() {
-    return [];
+    var company = new Company();
+    var companies = [company];
+    
+    return companies;
 }
 
 export function getCompany() {
