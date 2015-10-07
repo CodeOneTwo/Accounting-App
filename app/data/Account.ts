@@ -21,7 +21,7 @@ export var AccountSchema = new Schema({
     // Currency
     accountNumber: { type: Number },
 	// Account Type
-	accountType: { type: String, enum: accountType }         
+	accountType: { type: String }         
 });
 
 export var Account = model<IAccount>("Account", AccountSchema);

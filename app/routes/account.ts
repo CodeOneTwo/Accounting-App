@@ -1,13 +1,14 @@
 /// <reference path="../../typings/tsd.d.ts" />
 import * as express from "express";
 
-import {listAccounts, createAccount, getAccount, updateAccount, removeAccount} from "../controller/accounts";
+import {listAccounts, createAccount, getAccount, updateAccount, removeAccount} from "../controllers/accounts";
 
-var app = express.Router();
+var accountRoute = express.Router();
 
-app.get("/", listAccounts)
+accountRoute.get("/", listAccounts)
 .post("/", createAccount)
 .get("/:accountId", getAccount)
 .put("/:accountId", updateAccount)
 .delete("/:accountId", removeAccount);
 
+export {accountRoute};

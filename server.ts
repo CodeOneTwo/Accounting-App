@@ -3,7 +3,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as path from "path";
-import {mainRoute} from "./app/routes";
+import {mainRoute} from "./app/routes/main";
 
 var app = express();
 
