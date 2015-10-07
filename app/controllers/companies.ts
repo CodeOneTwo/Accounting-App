@@ -1,27 +1,57 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
 import {Company} from "../data/Company";
+import {Request, Response} from "express";
 
-export function listCompanies() {
-    var company = new Company();
-    var companies = [company];
+export function listCompanies(req: Request, res: Response) {
     
-    return companies;
+    Company.find({})
+        .exec((err, companies) => {
+            if(err) {
+                res.json(err, 400);
+            } else {
+                res.json(companies);    
+            }
+        })
 }
 
-export function getCompany() {
-    return "asdasd";
+export function getCompany(req: Request, res: Response, next) {
+    Company.findById(req.params.companyId).exec().then(doc => {
+        if(!doc) { 
+            return res.sendStatus(404); 
+            } else {
+                return res.json(doc)
+            } 
+        }, next);
+};
+
+
+export function createCompany(req: Request, res: Response, next) {
+    var company = new Company(req.body);
+    
+    company.save((err, company) => {
+        if(err) return next(err);
+        
+        res.json(company);
+    })
 }
 
-export function createCompany() {
-    var company = new Company();
-    return "success";
+export function updateCompany(req: Request, res: Response, next) {
+    Company.findByIdAndUpdate(req.params.companyId, req.body, {upsert: true}).exec().then(doc => {
+        if(!doc) { 
+            return res.sendStatus(404); 
+            } else {
+                return res.json(doc)
+            } 
+        }, next);
 }
 
-export function updateCompany() {
-    return "success";
-}
-
-export function removeCompany() {
-    return "success";
+export function removeCompany(req: Request, res: Response, next) {
+    Company.findByIdAndRemove(req.params.companyId).exec().then(doc => {
+        if(!doc) { 
+            return res.sendStatus(404); 
+            } else {
+                return res.json(doc)
+            } 
+        }, next);
 }

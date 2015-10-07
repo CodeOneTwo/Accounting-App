@@ -10,7 +10,15 @@ describe("routeTests", function(){
 		.get("/app")
 		.expect(200, {
 		"version": "0.0.1",
-		"authors": "Jan Dietrich, Tobias Bitterli, Dario Knorr"
+		"authors": "Jan Dietrich, Tobias Bitterli, Dario Maggi"
 		}, done);
 	});		
+	
+	it("create company", function(done) {
+		request(app)
+		.post("app/companies")
+		.expect(200, {
+			
+		}, done);
+	})
 });

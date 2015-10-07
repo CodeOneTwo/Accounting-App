@@ -1,7 +1,7 @@
 /// <reference path="../../typings/tsd.d.ts" />
 import * as express from "express";
 
-import {listCompanies, createCompany, getCompany, updateCompany, removeCompany} from "../controller/companies";
+import {listCompanies, createCompany, getCompany, updateCompany, removeCompany} from "../controllers/companies";
 
 var companyRoute = express.Router();
 
