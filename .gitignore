@@ -3,3 +3,4 @@ node_modules
 build
 typings
 public/jspm_packages
+public/config.js
