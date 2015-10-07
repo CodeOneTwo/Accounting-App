@@ -1,9 +1,19 @@
 /// <reference path="../../typings/tsd.d.ts" />
-import {model, Schema} from "mongoose";
+import {model, Schema, Document} from "mongoose";
 
-export interface ICompany {
+export interface ICompany extends Document {
     name: string;
     currency: string;
 }
 
-export var CompanySchema = "h";
+/**
+ * Company
+ */
+var CompanySchema = new Schema({
+    // Name
+    name: { type: String },
+    // Currency
+    currency: { type: String }         
+});
+
+export var Company = model<ICompany>("Company", CompanySchema);
