@@ -6,5 +6,9 @@
         "removeComments": true,
         "outDir": "build",
         "sourceMap": true
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "typings"
+    ]
 }

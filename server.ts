@@ -1,15 +1,27 @@
 /// <reference path="./typings/tsd.d.ts" />
 
 import * as express from "express";
+import * as bodyParser from "body-parser";
 import * as path from "path";
+import {mainRoute} from "./app/routes";
 
 var app = express();
 
-app.get("/app/accounts", getAccounts);
-app.post("/app/accounts", addAccount);
-app.get("/app/accounts/:account_id", getAccount);
-app.put("/app/accounts/:account_id", updateAccount);
-app.delete("/app/accounts/:account_id", deleteAccount);
+
+// log TODO: install morgan lib and tsd and uncomment the next line
+// app.use(morgan(config.logger.mode));
+
+// makes the body part usable
+app.use(bodyParser.json());
+
+// bind the api to the url /app
+app.use("/app", mainRoute);
+
+// app.get("/app/accounts", getAccounts);
+// app.post("/app/accounts", addAccount);
+// app.get("/app/accounts/:account_id", getAccount);
+// app.put("/app/accounts/:account_id", updateAccount);
+// app.delete("/app/accounts/:account_id", deleteAccount);
 
 // fake db
 var accounts: any[] = [
@@ -24,7 +36,7 @@ function getAccounts(req: any, res: any) {
 
 function addAccount(req: any, res: any) {
     var index = accounts.length;
-    var newAccount = { id: index, name: "account " + index + 1 }
+    var newAccount = { id: index, name: "account " + index + 1 };
     accounts.push(newAccount);
     res.json(accounts);
 }
@@ -35,9 +47,9 @@ function getAccount(req: any, res: any) {
 }
 
 function updateAccount(req: any, res: any) {
-    
+
     // todo
-    var account = accounts[req.params.account_id]
+    var account = accounts[req.params.account_id];
     res.json(account);
 }
 
