@@ -1,5 +1,6 @@
 /// <reference path="../../typings/tsd.d.ts" />
 import * as express from "express";
+import * as jwt from "jsonwebtoken";
 
 import {listCompanies, createCompany, getCompany, updateCompany, removeCompany} from "../controllers/companies";
 

@@ -46,6 +46,12 @@
     },
     "superagent/superagent.d.ts": {
       "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
+    },
+    "morgan/morgan.d.ts": {
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
+    },
+    "jsonwebtoken/jsonwebtoken.d.ts": {
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     }
   }
 }

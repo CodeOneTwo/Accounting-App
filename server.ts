@@ -3,15 +3,17 @@
 import * as express from "express";
 import {connect} from "mongoose";
 import * as bodyParser from "body-parser";
+import * as morgan from "morgan";
 import * as path from "path";
 import {mainRoute} from "./app/routes/main";
 
 var app = express();
 
 // log TODO: install morgan lib and tsd and uncomment the next line
-// app.use(morgan(config.logger.mode));
+app.use(morgan("dev"));
 
 // makes the body part usable
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // bind the api to the url /app
