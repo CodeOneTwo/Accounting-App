@@ -9,7 +9,7 @@ mainRoute.use("/companies", companyRoute);
 mainRoute.get("/", getInfo);
 // app.use("/accounts", accountRoute);
 
-function getInfo(req, res) {
+function getInfo(req: express.Request, res: express.Response) {
 	res.json({
 		"version": "0.0.1",
 		"authors": "Jan Dietrich, Tobias Bitterli, Dario Maggi"
