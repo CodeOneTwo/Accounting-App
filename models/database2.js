@@ -21,7 +21,7 @@ var Company = sq.define('Company', {
 		allowNull: false, 
 		defaultValue: 'Company'
 	},
-	type: Sequelize.STRING
+	description: Sequelize.STRING
 });
 
 var User = sq.define('User', {
