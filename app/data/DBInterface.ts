@@ -1,4 +1,4 @@
-export interface db {
+interface db {
 	
 	/**
 	 * connection with db established?
@@ -46,5 +46,7 @@ enum DBErrorCode {
 	DB_ALREADY_EXISTS = -1,
 	OK = 0,
 	NO_RIGHT_TO_CREATE_DB,
-		
+    DB_USERNAME_NON_EXISTENT,
+    DB_PASSWORD_WRONG,
+    DB_NOT_RUNNING
 };
