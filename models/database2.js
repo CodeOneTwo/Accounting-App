@@ -10,7 +10,7 @@ var sq = new Sequelize('todo', 'postgres', 'postgres', {
 });
 
 var Company = sq.define('Company', {
-	id: {
+	company_id: {
 		type: Sequelize.INTEGER, 
 		unique: true,
 		autoIncrement: true,
@@ -25,12 +25,17 @@ var Company = sq.define('Company', {
 });
 
 var User = sq.define('User', {
-	id: {
+	user_id: {
 		type: Sequelize.INTEGER, 
 		unique: true,
 		autoIncrement: true,
 		primaryKey: true
 	},
+    email: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false
+    },
 	name: {
 		type: Sequelize.STRING,
 		allowNull: false,
@@ -39,47 +44,92 @@ var User = sq.define('User', {
 	note: Sequelize.STRING
 });
 
-sq.sync();
-
 var CompanyUsers = sq.define('companyUsers', {
+	companyusers_id: {
+		type: Sequelize.INTEGER, 
+		unique: true,
+		autoIncrement: true,
+		primaryKey: true
+	},
+	right: Sequelize.ENUM('read', 'write')
+});
+
+User.belongsToMany(Company, {
+	through: CompanyUsers
+});
+
+Company.belongsToMany(User, {
+	through: CompanyUsers
+});
+
+var Account = sq.define('Account', {
+	account_id: {
+		type: Sequelize.INTEGER, 
+		unique: true,
+		autoIncrement: true,
+		primaryKey: true
+	},
+    number: {
+        type: Sequelize.STRING
+    },
+    type: {
+        type: Sequelize.STRING
+    }
+});
+
+var companyAccounts = sq.define('companyAccount', {
+    companyaccounts_id: {
+        type: Sequelize.INTEGER, 
+		unique: true,
+		autoIncrement: true,
+		primaryKey: true
+    }
+})
+
+Company.belongsToMany(Account, {
+    through: companyAccounts,
+    constraints: false
+})
+
+Account.belongsTo(Company, {
+    through: companyAccounts,
+    constraints: true
+});
+
+/*
+var Booking = sq.define('Booking', {
 	id: {
 		type: Sequelize.INTEGER, 
 		unique: true,
 		autoIncrement: true,
 		primaryKey: true
 	},
-	right: {
-		type: Sequelize.ENUM,
-		values: ['read', 'write']
-	},
+    date: Sequelize.DATE,
+    type: Sequelize.ENUM('user', 'auto')
 });
 
-User.belongsToMany(Company, {
-	through: {
-		model: CompanyUsers
-	}
-});
-
-Company.belongsToMany(User, {
-	through: {
-		model: CompanyUsers
-	}
-});
-
+/**/
 sq.sync();
 
-module.exports.user = function(){
-var user = User.create({
+var a = User.create({
 	name: 'Tobi',
 	right: 'write',
-	note: 'ueppa'
-})	
-}
+	note: 'ueppa',
+    email: 'abc'
+});
+    
+Company.create({
+    name: 'Company',
+    type: 'important'
+});	
 
-module.exports.company = function(){
+
+/*
 var company = Company.create({
 	name: 'Company',
 	type: 'important'
-})
-}
+});
+
+//company.setUser([user]);
+*/
 

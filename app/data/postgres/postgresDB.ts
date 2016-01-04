@@ -2,10 +2,10 @@ require('../DBInterface');
 
 var Sequelize = require('sequelize');
 
- class pdb implements db {
+class pdb implements db {
      
     /* Interface relay */
-    status = DBStatus.IDLE;
+    public status:DBStatus = DBStatus.IDLE;
     createDB(dbName: string){
         return this._createDB(dbName); 
     }
