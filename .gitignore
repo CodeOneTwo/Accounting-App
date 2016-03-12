@@ -1,7 +1,5 @@
 node_modules
 .idea
 build
-public/jspm_packages
-public/config.js
 .settings
 .vscode
