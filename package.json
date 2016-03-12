@@ -22,7 +22,8 @@
     "jsonwebtoken": "^5.4.0",
     "mongoose": "^4.1.8",
     "morgan": "^1.6.1",
-    "typescript": "^1.6.2"
+    "pg": "~4.4.3",
+    "sequelize": "~3.15.1"
   },
   "devDependencies": {
     "browser-sync": "^2.9.6",
@@ -33,21 +34,7 @@
     "jspm": "^0.16.10",
     "karma": "^0.13.10",
     "mocha": "^2.3.3",
-    "supertest": "^1.1.0"
-  },
-  "jspm": {
-    "directories": {
-      "baseURL": "public"
-    },
-    "dependencies": {},
-    "devDependencies": {
-      "angular": "github:angular/bower-angular@^1.4.5",
-      "angular-bootstrap": "npm:angular-bootstrap@^0.12.2",
-      "angular-ui-router": "npm:angular-ui-router@^0.2.15",
-      "bootstrap-less": "github:distros/bootstrap-less@^3.3.9",
-      "c3": "npm:c3@^0.4.11-rc4",
-      "d3": "npm:d3@^3.5.6",
-      "typescript": "npm:typescript@^1.6.2"
-    }
+    "supertest": "^1.1.0",
+    "typescript": "^1.7.5"
   }
 }
