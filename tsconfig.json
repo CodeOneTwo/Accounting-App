@@ -8,7 +8,7 @@
         "sourceMap": true
     },
     "exclude": [
-        "node_modules/typescript",
+        "node_modules",
         "typings"
     ]
 }

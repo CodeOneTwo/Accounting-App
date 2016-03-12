@@ -4,8 +4,8 @@ import {should, expect} from "chai";
 
 connect("mongodb://localhost:27017/testing");
 
-describe("dbTest", function(){	
-	it("simple test", function() {
-		expect().to.eql(0);
-	})
+describe("dbTest", function() {
+    it("simple test", function() {
+        expect(0).to.eql(0);
+    });
 });

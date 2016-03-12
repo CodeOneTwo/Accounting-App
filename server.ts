@@ -7,7 +7,7 @@ import * as morgan from "morgan";
 import * as path from "path";
 import {mainRoute} from "./app/routes/main";
 
-var app = express();
+const app = express();
 
 // log TODO: install morgan lib and tsd and uncomment the next line
 app.use(morgan("dev"));
@@ -21,6 +21,8 @@ app.use("/app", mainRoute);
 
 connect("mongodb://localhost:27017/accounting");
 
-app.listen(3000);
+app.listen(3000, function(){
+    console.log("server started");
+});
 
 export {app};

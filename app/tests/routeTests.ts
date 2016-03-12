@@ -5,20 +5,20 @@ import * as request from "supertest";
 import {app} from "../../server";
 
 describe("routeTests", function(){
-	it("get info", function(done) {
-		request(app)
-		.get("/app")
-		.expect(200, {
-		"version": "0.0.1",
-		"authors": "Jan Dietrich, Tobias Bitterli, Dario Maggi"
-		}, done);
-	});		
-	
-	it("create company", function(done) {
-		request(app)
-		.post("app/companies")
-		.expect(200, {
-			
-		}, done);
-	})
+    it("get info", function(done) {
+        request(app)
+        .get("/app")
+        .expect(200, {
+            "version": "0.0.1",
+            "authors": "Jan Dietrich, Tobias Bitterli, Dario Maggi"
+        }, done);
+    });
+
+    it("create company", function(done) {
+        request(app)
+        .post("app/companies")
+        .expect(200, {
+
+        }, done);
+    });
 });
